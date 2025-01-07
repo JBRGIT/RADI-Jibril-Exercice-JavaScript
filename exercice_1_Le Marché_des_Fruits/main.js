@@ -42,3 +42,23 @@ function ajouterFruit() {
 }
 
 ajouterFruit()
+
+
+class Voiture {
+    constructor(marque, modele, annee){
+        this.marque = marque;
+        this.modele = modele;
+        this.annee = annee;
+    }
+
+    afficherVoiture(){
+        console.log(`marque: ${this.marque}, modèle : ${this.modele}, annee : ${this.annee}`);
+    }
+}
+
+
+const v1 = new Voiture("Audi", "Q7");
+const v2 = new Voiture("Merco","G100");
+
+v1.afficherVoiture();
+v2.afficherVoiture();

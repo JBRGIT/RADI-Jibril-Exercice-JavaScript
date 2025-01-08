@@ -119,6 +119,7 @@ class AgenceLocation {
 
 
 let agence = new AgenceLocation();
+
 agence.ajouterVoiture(v1);
 agence.ajouterVoiture(v2);
 agence.ajouterVoiture(v3);
@@ -127,20 +128,58 @@ agence.ajouterVoiture(s2);
 agence.ajouterVoiture(s3);
 
 
-agence.afficherCatalogue("tous");
-agence.afficherCatalogue("supercar");
-agence.afficherCatalogue("voiture");
+// agence.afficherCatalogue("tous");
+// agence.afficherCatalogue("supercar");
+// agence.afficherCatalogue("voiture");
 
-agence.louerVoiture("Peugot", "208");
-agence.retournerVoiture("Peugot", "208");
-
-
+// agence.louerVoiture("Peugot", "208");
+// agence.retournerVoiture("Peugot", "208");
 
 
 
 
+function menu() {
 
+    alert("MENU PRINCIPAL : \n\n     1 : Afficher toutes les voitures.\n     2 : Afficher uniquement les supercars.\n     3 : Afficher uniquement les voitures standards.\n     4 : Louer une voiture.\n     5 : Retourner une voiture.\n     6 : Quitter le programme.")
+    const nb = parseInt(prompt("Entrez le numéro de la section souhaitez"));
 
+    switch (nb) {
+        case 1:
+            alert("Afficher toutes les voitures.")
+            agence.afficherCatalogue("tous");
+            break;
+
+        case 2:
+            alert("Afficher uniquement les supercars.")
+            agence.afficherCatalogue("supercar");
+            break;
+
+        case 3:
+            alert("Afficher uniquement les voitures standards.")
+            agence.afficherCatalogue("voiture");
+            break;
+        case 4:
+            alert("Louer une voiture.");
+            const lmarque = prompt("Entrez la marque à louer");
+            const lmodele = prompt("Entrez le modèle à louer");
+            agence.louerVoiture(lmarque, lmodele);
+            break;
+
+        case 5:
+            alert("Retourner une voiture.");
+            const rmarque = prompt("Entrez la marque à retourner");
+            const rmodele = prompt("Entrez le modèle à retourner");
+            agence.retournerVoiture(rmarque, rmodele);
+            break;
+
+        case 6:
+            alert("Au revoir !");
+            break;
+
+        default:
+            alert("Choix invalide !");
+    }
+}
 
 
 
